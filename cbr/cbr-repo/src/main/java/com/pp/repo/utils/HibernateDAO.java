@@ -5,6 +5,7 @@ import org.hibernate.Transaction;
 
 public interface HibernateDAO {
 	public Session getSesson();
+	
 	public Transaction getTransaction();
 
 }
