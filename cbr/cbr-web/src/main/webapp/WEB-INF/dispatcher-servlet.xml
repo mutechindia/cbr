@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<context:component-scan base-package="com.pp.controller.ws"/>
+	<context:component-scan base-package="com.pp.repo.utils"/>
+	<context:component-scan base-package="com.pp.controller" />
+	<context:component-scan base-package="com.pp.interceptor" />
+	<context:component-scan base-package="com.pp.repositary" />
+	<context:component-scan base-package="com.pp.service" />
+	<context:component-scan base-package="com.pp.model" />
+	<context:component-scan base-package="com.pp.validator" />
+	<context:component-scan base-package="com.pp.exception" /> 
+	<mvc:annotation-driven />
+    <context:annotation-config />
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/rest/*" />
+			<mvc:exclude-mapping path="/login*" />
+			<mvc:exclude-mapping path="/loginsubmit*" />
+			<mvc:exclude-mapping path="/registration*" />
+			<mvc:exclude-mapping path="/registrationsubmit*" />
+			<bean class="com.pp.interceptor.LoggingInterceptor"></bean>
+		</mvc:interceptor>
+		
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/rest/*" />
+			<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+			<property name="paramName" value="language" />
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en" />
+	</bean>
+
+	<!-- Register the welcome.properties -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<property name="basename" value="welcome" />
+	</bean>
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<property name="viewClass">
+			<value>
+				org.springframework.web.servlet.view.tiles2.TilesView
+			</value>
+		</property>
+	</bean>
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+		<property name="prefix" value="/WEB-INF/jsp"></property> <property name="suffix" 
+		value=".jsp"></property> </bean> -->
+
+</beans>

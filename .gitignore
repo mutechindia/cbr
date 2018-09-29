@@ -1,0 +1,16 @@
+
+cbr/cbr-repo/.settings/org.eclipse.wst.common.project.facet.core.xml
+cbr/.settings/org.eclipse.wst.common.project.facet.core.xml
+cbr/cbr-service/.settings/org.eclipse.wst.common.project.facet.core.xml
+cbr/cbr-web/.settings/org.eclipse.wst.common.project.facet.core.xml
+cbr/cbr-web/.tern-project
+*.prefs
+cbr/.classpath
+cbr/.project
+cbr/cbr-repo/.classpath
+cbr/cbr-repo/.project
+*.component
+cbr/cbr-service/.classpath
+cbr/cbr-web/.classpath
+cbr/cbr-web/.project
+cbr/cbr-service/.project
