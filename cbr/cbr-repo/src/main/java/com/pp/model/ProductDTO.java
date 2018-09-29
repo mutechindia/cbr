@@ -18,24 +18,29 @@ public class ProductDTO {
 	private String productName;
 	@Column(name = "productdec")
 	private String productDec;
+
 	public Integer getProductId() {
 		return productId;
 	}
+
 	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
+
 	public String getProductName() {
 		return productName;
 	}
+
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
+
 	public String getProductDec() {
 		return productDec;
 	}
+
 	public void setProductDec(String productDec) {
 		this.productDec = productDec;
 	}
-	
-	
+
 }
