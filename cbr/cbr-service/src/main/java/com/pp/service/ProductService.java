@@ -11,12 +11,13 @@ import com.pp.repositary.ProductRepository;
 
 @Service
 public class ProductService {
-@Autowired
-private ProductRepository prorepo; 
-public List productService(ProductDTO pro)
-{  List<Integer> ints = new ArrayList<Integer>();
-System.out.println("service"+ints);
-return prorepo.productList(pro);
+	@Autowired
+	private ProductRepository prorepo;
 
-}
+	public List productService(ProductDTO pro) {
+		List<Integer> ints = new ArrayList<Integer>();
+		System.out.println("service" + ints);
+		return prorepo.productList(pro);
+
+	}
 }
