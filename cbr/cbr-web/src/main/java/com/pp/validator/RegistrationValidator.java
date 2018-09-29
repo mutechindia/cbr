@@ -19,6 +19,7 @@ public class RegistrationValidator implements Validator {
 
 		return RegistrationDTO.class.isAssignableFrom(cls);
 	}
+
 	@Override
 	public void validate(Object target, Errors errors) {
 		RegistrationDTO reg = (RegistrationDTO) target;
@@ -26,10 +27,9 @@ public class RegistrationValidator implements Validator {
 		ValidationUtils.rejectIfEmpty(errors, "email", "error.emailId.empty");
 		ValidationUtils.rejectIfEmpty(errors, "userName", "error.username.empty");
 		ValidationUtils.rejectIfEmpty(errors, "password", "error.password.empty");
-		
-		if (reg.getEmail().trim().length()>0 && reg.getName().length()>0)
-		{   
-			if (regrepo.findByEmail(reg).size()>0) {
+
+		if (reg.getEmail().trim().length() > 0 && reg.getName().length() > 0) {
+			if (regrepo.findByEmail(reg).size() > 0) {
 				errors.rejectValue("email", "error.email.first.rule");
 			}
 		}
