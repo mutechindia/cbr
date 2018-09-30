@@ -1,4 +1,4 @@
-package com.pp.test;
+ package com.pp.test;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
