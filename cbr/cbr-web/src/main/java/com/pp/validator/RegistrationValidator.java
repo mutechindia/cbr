@@ -15,6 +15,7 @@ public class RegistrationValidator implements Validator {
 	private RegistrationRepository regrepo;
 
 	
+	
 	@Override
 	public boolean supports(Class<?> cls) {
 
