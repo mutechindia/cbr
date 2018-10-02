@@ -26,40 +26,7 @@
 
 	<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/registration</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/registrationsubmit</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/welcome</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/login</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/home</url-pattern>
-	</servlet-mapping>
-
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/loginsubmit</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/product</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>/submit</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>dispatcher</servlet-name>
-		<url-pattern>*.do</url-pattern>
-	</servlet-mapping>
-
+	
 </web-app>
