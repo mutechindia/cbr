@@ -12,7 +12,6 @@
 		<ul>
 			<li><a href="home">Home</a></li>
 			<li><a href="aboutus.do">About us</a></li>
-			<li><a href="#">Gallery</a></li>
 			<li><a href="#">Contact Us</a></li>
 			<li><a href="product">Product</a></li>
 			<li><a href="login">Login</a></li>

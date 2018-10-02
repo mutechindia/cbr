@@ -10,12 +10,17 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
 
-		<property name="dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="show_sql">true</property>
 		<property name="hbm2ddl.auto">create</property>
-		<mapping class="com.pp.test.ProductDTO"></mapping>
-		<mapping class="com.pp.test.RegistrationDTO"></mapping>
-		<mapping class="com.pp.test.UserDTO"></mapping>
 		
+		<mapping class="com.pp.model.User"></mapping>
+		<mapping class="com.pp.model.Address"></mapping>
+		<mapping class="com.pp.model.Registration"></mapping>
+		<mapping class="com.pp.model.Permissions"></mapping>
+		<mapping class="com.pp.model.UserRoles"></mapping>
+		<mapping class="com.pp.model.Roles"></mapping>
+
+				
 	</session-factory>
 </hibernate-configuration>

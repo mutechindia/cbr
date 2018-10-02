@@ -7,6 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
+<title>Pathshala login</title>
 <style type="text/css">
 .log {
 	margin-top: 60px;
