@@ -11,27 +11,25 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.pp.model.ProductDTO;
-import com.pp.repositary.ProductRepository;
-import com.pp.service.ProductService;
+import com.pp.model.Product;
+import com.pp.service.MasterProduct;
+
 
 @Controller
 public class ProductController {
 	@Autowired
-	private ProductRepository productRepository;
-	@Autowired
-	private ProductService productService;
-
+	private MasterProduct masterProduct;
+	
 	@RequestMapping(value = "/product", method = { RequestMethod.POST, RequestMethod.GET })
-	public String showProductEnter(@ModelAttribute("ProductDTO") ProductDTO product, Map<Object, Object> map,
+	public String showProductEnter(@ModelAttribute("Product") Product product, Map<Object, Object> map,
 			HttpServletRequest ht) {
 		System.out.println("product");
 		if (ht.getMethod().equals("GET")) {
-			ProductDTO productDTO = new ProductDTO();
-			map.put("ProductDTO", productDTO);
+			Product newProduct = new Product();
+			map.put("Product", newProduct);
 			return "product";
 		} else {
-			List list= productService.productService(product);
+			List list= masterProduct.getProduct(product);
 			map.put("key",list);
 			return "product";
 		}

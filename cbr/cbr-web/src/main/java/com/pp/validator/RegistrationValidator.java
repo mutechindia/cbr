@@ -6,23 +6,23 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import com.pp.model.RegistrationDTO;
-import com.pp.repositary.RegistrationRepository;
+import com.pp.model.Registration;
+import com.pp.repo.RegistrationDAO;
 
 @Component
 public class RegistrationValidator implements Validator {
 	@Autowired
-	private RegistrationRepository regrepo;
+	private RegistrationDAO regrepo;
 
 	@Override
 	public boolean supports(Class<?> cls) {
 
-		return RegistrationDTO.class.isAssignableFrom(cls);
+		return Registration.class.isAssignableFrom(cls);
 	}
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		RegistrationDTO reg = (RegistrationDTO) target;
+		Registration reg = (Registration) target;
 		ValidationUtils.rejectIfEmpty(errors, "name", "error.name.empty");
 		ValidationUtils.rejectIfEmpty(errors, "email", "error.emailId.empty");
 		ValidationUtils.rejectIfEmpty(errors, "userName", "error.username.empty");

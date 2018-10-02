@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "product")
-public class ProductDTO {
+public class Product {
 	@Id
 	
 	@GeneratedValue(strategy = GenerationType.AUTO)

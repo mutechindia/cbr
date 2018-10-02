@@ -27,7 +27,7 @@
 </head>
 <body>
 	<div class="log">
-		<form:form action="product" method="POST" modelAttribute="ProductDTO">
+		<form:form action="product" method="POST" modelAttribute="Product">
 			<table class="table1">
 				<caption>ENTER PRODUCT DETAIL</caption>
 				<tr>

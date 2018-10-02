@@ -6,28 +6,28 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import com.pp.model.UserDTO;
-import com.pp.repositary.LoginRepository;
+import com.pp.model.User;
+import com.pp.repo.LoginDAO;
 
 @Component
 public class LoginValidator implements Validator {
 	@Autowired
-	private LoginRepository loginRepository;
+	private LoginDAO dao;
 
 	@Override
 	public boolean supports(Class<?> cls) {
 
-		return UserDTO.class.isAssignableFrom(cls);
+		return User.class.isAssignableFrom(cls);
 	}
 	@Override
 	public void validate(Object target, Errors errors) {
-		UserDTO user = (UserDTO) target;
+		User user = (User) target;
 		ValidationUtils.rejectIfEmpty(errors, "email", "error.emailId.empty");
 		ValidationUtils.rejectIfEmpty(errors, "password", "error.password.empty");
 		
 		if (user.getEmail().trim().length()>0)
 		{   
-			if(loginRepository.loginCheck(user).size()==0){
+			if(dao.isUserRegister(user)!=true){
 				errors.rejectValue("email", "error.email.second.rule");
 			}
 		}

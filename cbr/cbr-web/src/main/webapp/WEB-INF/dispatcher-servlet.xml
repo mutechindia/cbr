@@ -12,14 +12,22 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<context:component-scan base-package="com.pp.controller.ws"/>
+	<context:component-scan base-package="com.pp.model" />
+	<context:component-scan base-package="com.pp.repo" />
+	<context:component-scan base-package="com.pp.repo.imp" />
 	<context:component-scan base-package="com.pp.repo.utils"/>
+	<context:component-scan base-package="com.pp.repo.dao"/>
+	<context:component-scan base-package="com.pp.repo.dao.imp"/>
+
+	<context:component-scan base-package="com.pp.service" />
+	<context:component-scan base-package="com.pp.service.imp" />
+
+	<context:component-scan base-package="com.pp.controller.ws"/>
+	
 	<context:component-scan base-package="com.pp.controller" />
 	<context:component-scan base-package="com.pp.interceptor" />
-	<context:component-scan base-package="com.pp.repositary" />
-	<context:component-scan base-package="com.pp.service" />
-	<context:component-scan base-package="com.pp.model" />
 	<context:component-scan base-package="com.pp.validator" />
+	
 	<context:component-scan base-package="com.pp.exception" /> 
 	<mvc:annotation-driven />
     <context:annotation-config />

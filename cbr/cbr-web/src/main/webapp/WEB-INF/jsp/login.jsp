@@ -25,7 +25,7 @@
 	 
 	 
 	<div class="log">
-		<form:form action="loginsubmit" method="GET" modelAttribute="UserDTO">
+		<form:form action="loginsubmit" method="GET" modelAttribute="user">
 			<table class="table1">
 				<caption><spring:message code="lang.login.caption"/></caption>
 				<tr>
