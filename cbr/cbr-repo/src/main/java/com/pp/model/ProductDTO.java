@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Table(name = "product")
 public class ProductDTO {
 	@Id
+	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "productid")
 	private Integer productId;

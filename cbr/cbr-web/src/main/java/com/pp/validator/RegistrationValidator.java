@@ -14,8 +14,6 @@ public class RegistrationValidator implements Validator {
 	@Autowired
 	private RegistrationRepository regrepo;
 
-	
-	
 	@Override
 	public boolean supports(Class<?> cls) {
 
