@@ -17,9 +17,10 @@
 		<mapping class="com.pp.model.User"></mapping>
 		<mapping class="com.pp.model.Address"></mapping>
 		<mapping class="com.pp.model.Registration"></mapping>
-		<mapping class="com.pp.model.PPPermissions"></mapping>
-		<mapping class="com.pp.model.PPUserRoles"></mapping>
-		<mapping class="com.pp.model.User"></mapping>
-		
+		<mapping class="com.pp.model.Permissions"></mapping>
+		<mapping class="com.pp.model.UserRoles"></mapping>
+		<mapping class="com.pp.model.Roles"></mapping>
+
+				
 	</session-factory>
 </hibernate-configuration>

@@ -25,7 +25,7 @@ public class User {
 	private String userPassword;
 	
 	@OneToOne(targetEntity=Address.class,cascade=CascadeType.ALL)
-	@JoinColumn(name="USER_ID",referencedColumnName="USE_ID")
+	@JoinColumn(name="USER_ID",referencedColumnName="USER_ID")
 	private Address userAddress;
 	
 	@Column(name="USER_EMAILID")
