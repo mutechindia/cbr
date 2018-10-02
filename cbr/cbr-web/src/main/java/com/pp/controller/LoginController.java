@@ -21,8 +21,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.pp.exception.CustomizedCheckedException;
 import com.pp.exception.CustomizedException;
-import com.pp.model.UserDTO;
-import com.pp.service.LoginService;
+import com.pp.model.User;
+import com.pp.service.imp.LoginService;
 import com.pp.validator.LoginValidator;
 
 @Controller
@@ -35,13 +35,13 @@ public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String showPage(Map<Object, Object> map) {
 		log.info("-----loginshowpage---");
-		UserDTO user = new UserDTO();
-		map.put("UserDTO", user);
+		User user = new User();
+		map.put("user", user);
 		return "login";
 	}
 
 	@RequestMapping(value = "/loginsubmit", method = RequestMethod.GET)
-	public String login(Model model, @ModelAttribute("UserDTO") UserDTO user, HttpServletRequest request,
+	public String login(Model model, @ModelAttribute("UserDTO") User user, HttpServletRequest request,
 			BindingResult result) {
 
 		log.info("-----------loginsubmit-----");

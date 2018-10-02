@@ -10,28 +10,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.pp.model.RegistrationDTO;
-import com.pp.repositary.RegistrationRepository;
+import com.pp.model.Registration;
+import com.pp.repo.RegistrationDAO;
 import com.pp.validator.RegistrationValidator;
 
 @Controller
 public class RegistrationController {
 
 	@Autowired
-	private RegistrationRepository registrationRepository;
+	private RegistrationDAO registration;
 
 	@Autowired
 	private RegistrationValidator registrationValidator;
 
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
 	public String registrationShowPage(Model model) {
-		RegistrationDTO reg = new RegistrationDTO();
+		Registration reg = new Registration();
 		model.addAttribute("RegistrationDTO", reg);
 		return "registration";
 	}
 
 	@RequestMapping(value = "/registrationsubmit", method = RequestMethod.POST)
-	public String registrationSubmitPage(@ModelAttribute("RegistrationDTO") RegistrationDTO reg, BindingResult result,
+	public String registrationSubmitPage(@ModelAttribute("RegistrationDTO") Registration reg, BindingResult result,
 			RedirectAttributes redirAttr) {
 		registrationValidator.validate(reg, result);
 		System.out.println(result.hasErrors());
@@ -39,7 +39,7 @@ public class RegistrationController {
 		if (result.hasErrors()) {
 			return "registration";
 		} else {
-			registrationRepository.registrationSave(reg);
+			registration.save(reg);
 //			redirAttr.addFlashAttribute("register", reg);
 			return "redirect:/login";
 		}
