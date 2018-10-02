@@ -17,18 +17,14 @@ public class WebLoginController {
 	public ResponseEntity<User> getUserInformation(@PathVariable String email, @PathVariable String password) {
 		System.out.println(email);
 		System.out.println(password);
-		User dt=new User();
-		dt.setId(1);
-		dt.setEmail("r@com");
-		dt.setPassword("*****");
+		User user=new User();
+		user.setUserId(1);
 		
-		return new ResponseEntity<User>(dt, HttpStatus.OK);
+		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
 	public ResponseEntity<Boolean> userLogin(@RequestBody User user) {
-		System.out.println(user.getEmail());
-		System.out.println(user.getPassword());
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 

@@ -25,7 +25,7 @@ public class LoginValidator implements Validator {
 		ValidationUtils.rejectIfEmpty(errors, "email", "error.emailId.empty");
 		ValidationUtils.rejectIfEmpty(errors, "password", "error.password.empty");
 		
-		if (user.getEmail().trim().length()>0)
+		if (user.getUserEmailID().trim().length()>0)
 		{   
 			if(dao.isUserRegister(user)!=true){
 				errors.rejectValue("email", "error.email.second.rule");
