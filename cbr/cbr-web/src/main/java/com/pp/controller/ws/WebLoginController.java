@@ -12,7 +12,8 @@ import com.pp.model.User;
 
 @Controller
 public class WebLoginController {
-
+    
+	//Using @RequestMapping With Dynamic URIs
 	@RequestMapping(value = "/userlogin/{email}/{password}", method = RequestMethod.GET)
 	public ResponseEntity<User> getUserInformation(@PathVariable String email, @PathVariable String password) {
 		System.out.println(email);
@@ -23,11 +24,13 @@ public class WebLoginController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 	
+	
 	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
 	public ResponseEntity<Boolean> userLogin(@RequestBody User user) {
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 
+	
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<String> userDelete(@PathVariable Integer id) {
 		System.out.println("deleted");
