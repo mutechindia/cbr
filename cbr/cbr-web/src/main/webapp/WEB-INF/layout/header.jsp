@@ -11,7 +11,6 @@
 </head>
 <body>
 <div class="header" >
-<img src="img/header.jpg" alt="image is loading" height="200" width="200"/>
 </div>
 </body>
 </html>

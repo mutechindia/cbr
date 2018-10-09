@@ -13,11 +13,9 @@
 </head>
 <body>
 	<div class="home">
-		<p><h1>Java is a programming language and a platform. Java is a high<br>
-			level, robust, secured and object-oriented programming language.<br>
-			Platform: Any hardware or software environment in which a program<br>
-			runs, is known as a platform. Since Java has its own runtime<br>
-			environment (JRE) and API, it is called platform.</h1></p>
+		<p>
+		<h1>Home</h1>
+		</p>
 	</div>
 </body>
 </html>

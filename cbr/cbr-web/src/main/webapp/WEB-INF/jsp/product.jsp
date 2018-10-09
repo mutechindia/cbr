@@ -7,23 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
-<style type="text/css">
-.log ,.table1{
-	margin: auto;
-	width: 80%;
-	min-height: 100px;
-	border: 1px solid grey;
-	width: 80%;
-	text-align: left;
-}
-.product,table,tr,td,th{
-	margin: auto;
-	width: 80%;
-	min-height: 100px;
-	border: 1px solid grey;
-	text-align: center;
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div class="log">

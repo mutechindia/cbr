@@ -1,0 +1,99 @@
+select * from 
+( 
+Select distinct a.bulk_ref_id, a.ref_id, a.applicant_name, b.tnx_id, 
+b.tnx_stat_code, b.tnx_type_code, b.bo_inp_user_id, b.bo_release_user_id,
+b.tnx_val_date, o.TAX_ID, o.BILLING_ID,
+(CASE WHEN o.NTPN_REF_ID is null THEN oo.NTPN_REF_ID ELSE o.NTPN_REF_ID END) NTPN ,oo.NTPN_REF_ID
+
+FROM ((( GTP_PRODUCT_FT a LEFT OUTER JOIN GTP_PRODUCT_FT_TNX b ON a.ref_id = b.ref_id and a.bulk_ref_id = b.bulk_ref_id ) 
+LEFT OUTER JOIN 
+(  select A.REF_ID, A.TAX_ID, B.BILLING_ID, C.NTPN_REF_ID from
+(  select  a.ref_id ,( CASE WHEN a.name = 'tax_id' THEN a.string_value ELSE null END ) tax_id,  
+( CASE WHEN a.name = 'billing_id' THEN a.string_value ELSE null END) billing_id, 
+( CASE WHEN a.name = 'ntpn_ref_id' THEN a.string_value ELSE null END) ntpn_ref_id from GTP_PRODUCT_OBJECTDATA a where a.name='tax_id') A,
+
+(select  a.ref_id ,( CASE WHEN a.name = 'tax_id' THEN a.string_value ELSE null END ) tax_id, 
+                  ( CASE WHEN a.name = 'billing_id' THEN a.string_value ELSE null END) billing_id,
+                  ( CASE WHEN a.name = 'ntpn_ref_id' THEN a.string_value ELSE null END) ntpn_ref_id 
+                  from GTP_PRODUCT_OBJECTDATA a where  a.name='billing_id' ) B, 
+(select  a.ref_id ,( CASE WHEN a.name = 'tax_id' THEN a.string_value ELSE null END ) tax_id, 
+                  ( CASE WHEN a.name = 'billing_id' THEN a.string_value ELSE null END) billing_id,
+                  ( CASE WHEN a.name = 'ntpn_ref_id' THEN a.string_value ELSE null END) ntpn_ref_id from GTP_PRODUCT_OBJECTDATA a where  a.name='ntpn_ref_id' ) 
+                  
+                  C  where A.REF_ID=B.REF_ID and B.REF_ID=C.REF_ID )
+                  
+                  
+                  o ON a.ref_id = o.ref_id )
+                   LEFT OUTER JOIN (select A.REF_ID, A.TAX_ID, B.BILLING_ID, C.NTPN_REF_ID from (  select  a.ref_id ,( CASE WHEN a.name = 'tax_id' THEN a.string_value ELSE null END ) tax_id, 
+                  ( CASE WHEN a.name = 'billing_id' THEN a.string_value ELSE null END) billing_id,
+                  ( CASE WHEN a.name = 'ntpn_ref_id' THEN a.string_value ELSE null END) ntpn_ref_id from GTP_PRODUCT_OBJECTDATA_TNX a where a.name='tax_id') A,  (select  a.ref_id ,( CASE WHEN a.name = 'tax_id' THEN a.string_value ELSE null END ) tax_id, 
+                  ( CASE WHEN a.name = 'billing_id' THEN a.string_value ELSE null END) billing_id,
+                  ( CASE WHEN a.name = 'ntpn_ref_id' THEN a.string_value ELSE null END) ntpn_ref_id from GTP_PRODUCT_OBJECTDATA_TNX a where  a.name='billing_id' ) B,  (select  a.ref_id ,( CASE WHEN a.name = 'tax_id' THEN a.string_value ELSE null END ) tax_id, 
+                  ( CASE WHEN a.name = 'billing_id' THEN a.string_value ELSE null END) billing_id,
+                  ( CASE WHEN a.name = 'ntpn_ref_id' THEN a.string_value ELSE null END) ntpn_ref_id from GTP_PRODUCT_OBJECTDATA_TNX a where  a.name='ntpn_ref_id' ) C  where A.REF_ID=B.REF_ID and B.REF_ID=C.REF_ID ) oo ON a.ref_id = oo.ref_id )  
+                  where  a.SUB_PRODUCT_CODE='ETAX')  F where F.NTPN is null  ;
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                   select * from gtp_param_data where parm_id in('P119','P120','P340')and key_3 in('PAYMT' ,'PAYRL') and key_1='UOBH';
+
+select UR.USER_ID, 
+S.PERMISSION, R. 
+* from GTP_ROLE R, 
+GTP_PERMISSION S ,
+GTP_ROLE_PERMISSION P,
+GTP_USER_GROUP_ROLE UR   where P.PERMISSION_ID='4527'
+and R.ROLE_ID=P.ROLE_ID and UR.ROLE_ID=R.ROLE_ID  and UR.USER_ID='740' and S.PERMISSION_ID=P.PERMISSION_ID ; 
+
+select * from gtp_user_group_role where role_id in(100260) and user_id='740';
+
+select data_1, data_2, data_3, data_4, data_5, data_6, data_7, data_8, data_9, data_10, data_11, data_12, data_13, data_14, data_15, data_16, data_17, data_18, data_19, data_20, wild_card_ind, key_1, key_2, key_3, key_4, key_5, key_6, key_7, key_8, key_9, key_10,  key_11, key_12, key_13, key_14, key_15, key_16, key_17, key_18, key_19, key_20,
+
+brch_code, company_id  from GTP_PARAM_DATA where parm_id = 'P119' and brch_code in ('00001','*') 
+and company_id in ('1','*','**') and key_1 in ('UOBH','*','**') order by data_1 asc;
+
+select * from gtp_permission where permission='bk_upg3_uga';
+
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4564, 'bk_upg3i_access');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4565, 'bk_upg3n_access');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4566, 'bk_ucg3i_access');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4567, 'bk_ucg3n_access');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4568, 'bk_ulg3mi_access');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4569, 'bk_ulg3mn_access');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4570, 'bk_ulg3xi_access');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4571, 'bk_ulg3xn_access');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4545, 'bk_ulg3x_access');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4527, 'bk_upg3_access');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4542, 'bk_ulg3m_access');
+
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4572, 'bk_ulg3m_ugb');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4573, 'bk_ulg3m_uga');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4574, 'bk_ulg3x_ugb');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4575, 'bk_ulg3x_uga');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4576, 'bk_upg3_ugb');
+INSERT INTO gtp_permission (permission_id, PERMISSION) VALUES (4577, 'bk_upg3_uga');
+commit;
+select * from gtp_permission where PERMISSION in('bk_ulg3m_ugb','bk_ulg3m_uga','bk_ulg3x_ugb','bk_ulg3x_uga','bk_upg3_ugb','bk_upg3_uga');
+
+insert into GTP_PARAM_DATA (BRCH_CODE, PARM_ID, COMPANY_ID, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, WILD_CARD_IND, DATA_1, DATA_2, DATA_3, DATA_4, DATA_5, DATA_6, DATA_7, DATA_8, DATA_9, DATA_10, DATA_11, DATA_12, DATA_13, DATA_14, DATA_15, DATA_16, DATA_17, DATA_18, DATA_19, DATA_20, KEY_10, KEY_11, KEY_12, KEY_13, KEY_14, KEY_15, KEY_16, KEY_17, KEY_18, KEY_19, KEY_20) values ('00001', 'P340', '*', 'UOBH', 'U', 'PAYMT', '**', 'G3', '**', '**', '**', '**', '**', 'UPG3', 'Bulk Upload G3 Payment', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**');
+insert into GTP_PARAM_DATA (BRCH_CODE, PARM_ID, COMPANY_ID, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, WILD_CARD_IND, DATA_1, DATA_2, DATA_3, DATA_4, DATA_5, DATA_6, DATA_7, DATA_8, DATA_9, DATA_10, DATA_11, DATA_12, DATA_13, DATA_14, DATA_15, DATA_16, DATA_17, DATA_18, DATA_19, DATA_20, KEY_10, KEY_11, KEY_12, KEY_13, KEY_14, KEY_15, KEY_16, KEY_17, KEY_18, KEY_19, KEY_20) values ('00001', 'P340', '*', 'UOBH', 'U', 'PAYRL', 'EXEC', 'G3', '**', '**', '**', '**', '**', 'ULG3X', 'Bulk Upload G3 Payroll Executive', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**');
+insert into GTP_PARAM_DATA (BRCH_CODE, PARM_ID, COMPANY_ID, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, WILD_CARD_IND, DATA_1, DATA_2, DATA_3, DATA_4, DATA_5, DATA_6, DATA_7, DATA_8, DATA_9, DATA_10, DATA_11, DATA_12, DATA_13, DATA_14, DATA_15, DATA_16, DATA_17, DATA_18, DATA_19, DATA_20, KEY_10, KEY_11, KEY_12, KEY_13, KEY_14, KEY_15, KEY_16, KEY_17, KEY_18, KEY_19, KEY_20) values ('00001', 'P340', '*', 'UOBH', 'U', 'PAYRL', 'EMPL', 'G3', '**', '**', '**', '**', '**', 'ULG3M', 'Bulk Upload G3 Payroll Employee', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**', '**');
+
+select * from gtp_product_objectdata_tnx where name like '%g3%'; 
+                  
