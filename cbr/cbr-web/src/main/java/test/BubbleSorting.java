@@ -1,7 +1,5 @@
 package test;
 
-import java.util.Arrays;
-
 public class BubbleSorting {
 	public static int[] doSelectionSort(int[] arr) {
 		int count = 0;

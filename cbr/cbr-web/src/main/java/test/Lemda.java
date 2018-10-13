@@ -39,8 +39,8 @@ public class Lemda {
 		list.add(new Product(6, "Lenevo Vibe", 19000f));
 
 		// using lambda to filter data
-		Stream<Product> filtered_data = list.stream().filter((p) ->p.price > 20000);
-//		Stream<Product> pro=list.stream().filter();
+		Stream<Product> filtered_data = list.stream().filter((p) -> p.price > 20000);
+		// Stream<Product> pro=list.stream().filter();
 
 		// using lambda to iterate through collection
 		filtered_data.forEach(product -> System.out.println(product.name + ": " + product.price));
