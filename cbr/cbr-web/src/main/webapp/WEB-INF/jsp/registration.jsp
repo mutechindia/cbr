@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>registration</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="cbr-web/../css/style.css">
 </head>
 <body>
 	<div class="sec2">

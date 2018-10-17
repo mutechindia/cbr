@@ -1,5 +1,6 @@
 package com.pp.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,8 @@ import com.pp.validator.RegistrationValidator;
 
 @Controller
 public class RegistrationController {
+	
+	private static Logger log = Logger.getLogger(RegistrationController.class);
 
 	@Autowired
 	private RegistrationDAO registration;
@@ -32,10 +35,10 @@ public class RegistrationController {
 
 	@RequestMapping(value = "/registrationsubmit", method = RequestMethod.POST)
 	public String registrationSubmitPage(@ModelAttribute("RegistrationDTO") Registration reg, BindingResult result,
-			RedirectAttributes redirAttr) {
+			RedirectAttributes redirAttr) 
+	  {
 		registrationValidator.validate(reg, result);
-		System.out.println(result.hasErrors());
-		System.out.println(result.getErrorCount());
+		log.error(RegistrationController.class+"  Registration Validation" + " error "+result.hasErrors());
 		if (result.hasErrors()) {
 			return "registration";
 		} else {

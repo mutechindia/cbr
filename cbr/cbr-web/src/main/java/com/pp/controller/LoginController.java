@@ -23,6 +23,7 @@ import com.pp.validator.LoginValidator;
 
 @Controller
 public class LoginController {
+	
 	@Autowired
 	private LoginValidator loginValidator;
 

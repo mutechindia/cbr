@@ -8,7 +8,7 @@
 <html>
 <head>
 <title>Pathshala login</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="cbr-web/../css/style.css">
 <style type="text/css">
 .log {
 	margin-top: 60px;
