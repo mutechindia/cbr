@@ -38,7 +38,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/loginsubmit", method = RequestMethod.GET)
-	public String login(Model model, @ModelAttribute("UserDTO") User user, HttpServletRequest request,
+	public String login(Model model, @ModelAttribute("user") User user, HttpServletRequest request,
 			BindingResult result) {
 
 		log.info("-----------loginsubmit-----");

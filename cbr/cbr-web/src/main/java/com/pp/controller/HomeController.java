@@ -14,4 +14,10 @@ public class HomeController {
 		
 		
 	}
+	@RequestMapping(value = { "/default"})
+	public String defaultHomePage() {
+		return "default";
+		
+		
+	}
 }

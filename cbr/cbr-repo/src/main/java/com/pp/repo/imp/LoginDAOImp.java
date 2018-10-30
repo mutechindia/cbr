@@ -15,7 +15,7 @@ public class LoginDAOImp implements LoginDAO{
 	
 	public boolean isUserRegister(User user) {
 		
-		List list = hibernateTemplate.find("select email from Registration where email=?", user.getUserEmailID());
+		List list = hibernateTemplate.find("select regEmail from Registration where regEmail=?", user.getUserEmailID());
 		if (list.size() >= 1) {
 			return true;
 		} else {

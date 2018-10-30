@@ -12,7 +12,7 @@
 
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="show_sql">true</property>
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 		
 		<mapping class="com.pp.model.User"></mapping>
 		<mapping class="com.pp.model.Address"></mapping>
@@ -20,6 +20,7 @@
 		<mapping class="com.pp.model.Permissions"></mapping>
 		<mapping class="com.pp.model.UserRoles"></mapping>
 		<mapping class="com.pp.model.Roles"></mapping>
+		<mapping class="com.pp.test.EmployeeDTO"></mapping>
 
 				
 	</session-factory>

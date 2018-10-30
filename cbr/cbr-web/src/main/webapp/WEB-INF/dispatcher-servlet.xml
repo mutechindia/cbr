@@ -29,6 +29,7 @@
 	<context:component-scan base-package="com.pp.validator" />
 	
 	<context:component-scan base-package="com.pp.exception" /> 
+	
 	<mvc:annotation-driven />
     <context:annotation-config />
 	<mvc:interceptors>
@@ -81,8 +82,8 @@
 		</property>
 	</bean>
 
-	<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
 		<property name="prefix" value="/WEB-INF/jsp"></property> <property name="suffix" 
-		value=".jsp"></property> </bean> -->
+		value=".jsp"></property> </bean>
 
 </beans>

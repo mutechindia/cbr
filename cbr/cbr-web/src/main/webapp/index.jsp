@@ -1,7 +1,7 @@
 <html>
 <body>
 <h1>Hello World!</h1>
-<a href="home/page">page</a>
+<a href="home/default">Default</a>
 <a href="home">home</a>
 <a href="login">LOGIN</a>
 <a href="welcome">WELCOME</a>

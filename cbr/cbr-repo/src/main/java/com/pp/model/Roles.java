@@ -10,8 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
@@ -27,7 +25,7 @@ public class Roles {
 	
 	@OneToMany(fetch=FetchType.LAZY, targetEntity=Permissions.class, cascade=CascadeType.ALL)
 	@JoinColumn(name = "ROLE_ID", referencedColumnName="ROLE_ID")
-	private Set Permission;
+	private Set<Permissions> Permission;
 	
 	public Integer getRoleId() {
 		return roleId;

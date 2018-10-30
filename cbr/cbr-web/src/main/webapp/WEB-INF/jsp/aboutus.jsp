@@ -7,13 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
-<style type="text/css">
-.home{
-text-align: center;
-font-family: cursive;
-font-size: 24px;
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div class="aboutus.do">

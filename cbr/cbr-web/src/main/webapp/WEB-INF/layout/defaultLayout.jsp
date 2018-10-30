@@ -5,9 +5,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>Successfully</h1>
-</body>
+	<div class="container">
+		<div class="header">
+			<tiles:insertAttribute name="header" />
+		</div>
+		<div class="column1">
+			<tiles:insertAttribute name="column1" />
+		</div>
+		<div class="column2">
+			<tiles:insertAttribute name="column1" />
+		</div>
+		
+		<div class="footer">
+			<tiles:insertAttribute name="footer" />
+		</div>
+	</div>
 </html>

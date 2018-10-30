@@ -25,12 +25,12 @@ class Product {
 public class Lemda {
 
 	public static void main(String[] args) {
-		I1 i1 = (a) -> {
+		/*I1 i1 = (a) -> {
 			return a;
 		};
 		System.out.println(i1.say(10));
 		System.out.println("lemda");
-		List<Product> list = new ArrayList<Product>();
+		*/List<Product> list = new ArrayList<Product>();
 		list.add(new Product(1, "Samsung A5", 17000f));
 		list.add(new Product(3, "Iphone 6S", 65000f));
 		list.add(new Product(2, "Sony Xperia", 25000f));
