@@ -11,7 +11,6 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-
 	<context:component-scan base-package="com.pp.model" />
 	<context:component-scan base-package="com.pp.repo" />
 	<context:component-scan base-package="com.pp.repo.imp" />
@@ -30,8 +29,13 @@
 	
 	<context:component-scan base-package="com.pp.exception" /> 
 	
+   <!--  <mvc:resources mapping="/WEB-INF/**" location="/WEB-INF/css"></mvc:resources> -->
+    <mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>
+	
 	<mvc:annotation-driven />
+    
     <context:annotation-config />
+	
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />

@@ -111,6 +111,7 @@
 	<properties>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 	</properties>
+	
 	<build>
 		<finalName>cbr-web</finalName>
 		<plugins>

@@ -7,7 +7,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/WEB-INF/css/style.css">
 </head>
 <body>
 	<div class="log">
