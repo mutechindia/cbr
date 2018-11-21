@@ -1,3 +1,4 @@
+<link href="${pageContext.request.contextPath}/resources/css/menu.css" rel="stylesheet" />
 <ul>
 	<li><a href="home">Home</a></li>
 	<li><a href="#">About us</a></li>
