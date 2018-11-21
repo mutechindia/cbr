@@ -22,13 +22,13 @@ public class LoginValidator implements Validator {
 	@Override
 	public void validate(Object target, Errors errors) {
 		User user = (User) target;
-		ValidationUtils.rejectIfEmpty(errors, "email", "error.emailId.empty");
-		ValidationUtils.rejectIfEmpty(errors, "password", "error.password.empty");
+		ValidationUtils.rejectIfEmpty(errors, "userEmailID", "error.emailId.empty");
+		ValidationUtils.rejectIfEmpty(errors, "userPassword", "error.password.empty");
 		
 		if (user.getUserEmailID().trim().length()>0)
 		{   
 			if(dao.isUserRegister(user)!=true){
-				errors.rejectValue("email", "error.email.second.rule");
+				errors.rejectValue("userEmailID", "error.email.second.rule");
 			}
 		}
 	}

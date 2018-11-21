@@ -23,14 +23,15 @@ public class RegistrationValidator implements Validator {
 	@Override
 	public void validate(Object target, Errors errors) {
 		Registration reg = (Registration) target;
-		ValidationUtils.rejectIfEmpty(errors, "name", "error.name.empty");
-		ValidationUtils.rejectIfEmpty(errors, "email", "error.emailId.empty");
+		ValidationUtils.rejectIfEmpty(errors, "regType", "error.type.empty");
+		ValidationUtils.rejectIfEmpty(errors, "regName", "error.name.empty");
+		ValidationUtils.rejectIfEmpty(errors, "regEmail", "error.emailId.empty");
 		ValidationUtils.rejectIfEmpty(errors, "userName", "error.username.empty");
-		ValidationUtils.rejectIfEmpty(errors, "password", "error.password.empty");
+		ValidationUtils.rejectIfEmpty(errors, "userPassword", "error.password.empty");
 
-		if (reg.getEmail().trim().length() > 0 && reg.getName().length() > 0) {
+		if (reg.getRegEmail().trim().length() > 0 && reg.getRegEmail().length() > 0) {
 			if (regrepo.findByEmail(reg).size() > 0) {
-				errors.rejectValue("email", "error.email.first.rule");
+				errors.rejectValue("regEmail", "error.email.first.rule");
 			}
 		}
 	}

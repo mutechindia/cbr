@@ -15,7 +15,7 @@ public class RegistrationDAOImp implements RegistrationDAO {
 	HibernateTemplate hibernateTemplate;
 
 	public List findByEmail(Registration registration) {
-		List list = hibernateTemplate.find("select dt.email from Registration dt where dt.email=?", registration.getEmail() );
+		List list = hibernateTemplate.find("select dt.regEmail from Registration dt where dt.regEmail=?", registration.getRegEmail() );
 		return list;
 
 	}

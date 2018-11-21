@@ -12,20 +12,23 @@ import javax.persistence.Table;
 public class Registration {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
+	@Column(name = "REG_ID")
 	private Integer id;
 	
-	@Column(name = "name")
-	private String name;
-
-	@Column(name = "email")
-	private String email;
+	@Column(name = "REG_TYPE")
+	private String regType;
 	
-	@Column(name="username")
+	@Column(name = "REG_NAME")
+	private String regName;
+
+	@Column(name = "REG_EMAIL")
+	private String regEmail;
+	
+	@Column(name="USER_NAME")
 	private String userName;
 	
-	@Column(name = "password")
-	private String password;
+	@Column(name = "USER_PASSWORD")
+	private String userPassword;
 
 	public Integer getId() {
 		return id;
@@ -35,20 +38,28 @@ public class Registration {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getRegType() {
+		return regType;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setRegType(String regType) {
+		this.regType = regType;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getRegName() {
+		return regName;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setRegName(String regName) {
+		this.regName = regName;
+	}
+
+	public String getRegEmail() {
+		return regEmail;
+	}
+
+	public void setRegEmail(String regEmail) {
+		this.regEmail = regEmail;
 	}
 
 	public String getUserName() {
@@ -59,12 +70,12 @@ public class Registration {
 		this.userName = userName;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getUserPassword() {
+		return userPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
 	

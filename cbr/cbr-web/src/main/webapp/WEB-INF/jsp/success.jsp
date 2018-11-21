@@ -5,13 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<style type="text/css">
-h1{
-margin-top:20;
-text-align: center;
-border: 1px solid grey;
-}
-</style>
+<link rel="stylesheet" href="/WEB-INF/css/style.css">
 </head>
 <body>
 <h1>Successfully</h1>

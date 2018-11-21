@@ -2,8 +2,10 @@ package test;
 
 public class Factorial {
   public static int facto(int fect)
-  {   if(fect==1)
+  {   
+	  if(fect==1)
 	  return 1;
+	  
 	  return fect*facto(fect-1);
 	  
   }

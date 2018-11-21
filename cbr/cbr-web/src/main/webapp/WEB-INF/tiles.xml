@@ -15,6 +15,18 @@
 		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
 	</definition>
 
+	<definition name="defaultLayout" id="defaultLayout" template="/WEB-INF/layout/defaultLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+		<put-attribute name="column1" value= "${column1}"/>
+		<put-attribute name="column1" value="${column1}" />
+		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+	</definition>
+
+     <definition name="default" id="default" extends="defaultLayout">
+		<put-attribute name="column1" value="/WEB-INF/jsp/registration.jsp"/>
+		<put-attribute name="column1" value="/WEB-INF/jsp/registration.jsp"/>
+	</definition>
+
 	<definition name="registration" id="registration" extends="baseTemplate">
 		<put-attribute name="body" value="/WEB-INF/jsp/registration.jsp"/>
 	</definition>
